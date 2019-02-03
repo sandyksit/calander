@@ -2,12 +2,16 @@ import React from 'react';
 
 import TodoList from './TodoList';
 import TodoAddForm from './TodoAddForm';
+import Calendar from './calendar';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      dateRange: {
+        from: new Date()
+      },
       items: JSON.parse(window.sessionStorage.getItem('todos')) || [],
     };
 
@@ -29,6 +33,7 @@ class App extends React.Component {
       <div className="App">
         <TodoAddForm items={ this.state.items } onAfterAdd={ this.osc } />
         <TodoList items={ this.state.items } onChange={ this.osc } />
+        <Calendar/>
       </div>
     );
   }
