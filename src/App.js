@@ -9,9 +9,6 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      dateRange: {
-        from: new Date()
-      },
       items: JSON.parse(window.sessionStorage.getItem('todos')) || [],
     };
 
